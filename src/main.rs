@@ -8,7 +8,7 @@ mod strategy;
 use strategy::Strategy;
 
 #[derive(Debug, StructOpt)]
-#[structopt(name = "pg_anomimize", about = "Anonimize postgres COPY output")]
+#[structopt(name = "pg_anonymize", about = "Anonymize PostgreSQL COPY output")]
 struct Opts {
 #[structopt()]
     /// The table we're COPY-ing
