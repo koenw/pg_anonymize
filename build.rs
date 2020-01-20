@@ -15,7 +15,7 @@ fn main() {
         for name in NAMES.split("\n") {
             f.write_all(format!("\"{}\", ", name).as_bytes()).unwrap();
         }
-        f.write_all(b"];").unwrap();
+        f.write_all(b"]").unwrap();
     }
 
     // Generate array of surnames
@@ -28,6 +28,6 @@ fn main() {
         for name in NAMES.split("\n") {
             f.write_all(format!("\"{}\", ", name).as_bytes()).unwrap();
         }
-        f.write_all(b"];").unwrap();
+        f.write_all(b"]").unwrap();
     }
 }
