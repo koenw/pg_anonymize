@@ -35,3 +35,10 @@ tables:
 
 If you haven't got rust/cargo installed on your system yet, I suggest
 [rustup](https://rustup.rs/).
+
+## TODO
+
+* more documentation
+* tests
+* Dockerfile/image
+* Make `Strategy` a Trait
