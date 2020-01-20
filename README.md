@@ -40,5 +40,4 @@ If you haven't got rust/cargo installed on your system yet, I suggest
 
 * more documentation
 * tests
-* Dockerfile/image
 * Make `Strategy` a Trait
