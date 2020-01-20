@@ -10,6 +10,7 @@ pub(crate) enum Strategy {
     Name,
     Prose,
     PhoneNr,
+    OneOf(Vec<String>),
 }
 
 impl Strategy {
@@ -33,6 +34,7 @@ impl Strategy {
             Name => format!("{} {}", random::given_name(), random::surname()),
             Prose => random::prose(),
             PhoneNr => random::phone_nr(),
+            OneOf(list) => random::element(list),
         }
     }
 }
