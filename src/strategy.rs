@@ -1,6 +1,8 @@
 use serde::Deserialize;
 
-mod random;
+mod strategies;
+
+use strategies::*;
 
 #[derive(Deserialize)]
 pub(crate) enum Strategy {
@@ -19,11 +21,11 @@ impl Strategy {
         use Strategy::*;
         match self {
             BinaryGender => if rand::random() { "M".to_string() } else { "V".to_string() },
-            Date => random::date(),
+            Date => date(),
             Characters => {
                 let mut initials = String::new();
                 loop {
-                    let c = random::char().to_ascii_uppercase();
+                    let c = char().to_ascii_uppercase();
                     initials.push(c);
                     if rand::random() {
                         break;
@@ -31,10 +33,10 @@ impl Strategy {
                 }
                 initials
             },
-            Name => format!("{} {}", random::given_name(), random::surname()),
-            Prose => random::prose(),
-            PhoneNr => random::phone_nr(),
-            OneOf(list) => random::element(list),
+            Name => format!("{} {}", given_name(), surname()),
+            Prose => prose(),
+            PhoneNr => phone_nr(),
+            OneOf(list) => element(list),
         }
     }
 }
