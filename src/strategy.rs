@@ -20,7 +20,13 @@ impl Strategy {
     pub(crate) fn generate(&self) -> String {
         use Strategy::*;
         match self {
-            BinaryGender => if rand::random() { "M".to_string() } else { "V".to_string() },
+            BinaryGender => {
+                if rand::random() {
+                    "M".to_string()
+                } else {
+                    "V".to_string()
+                }
+            }
             Date => date(),
             Characters => {
                 let mut initials = String::new();
