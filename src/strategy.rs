@@ -10,7 +10,7 @@ pub(crate) enum Strategy {
     Date,
     Characters,
     Name,
-    Prose,
+    Prose(usize),
     PhoneNr,
     OneOf(Vec<String>),
 }
@@ -32,9 +32,9 @@ impl Strategy {
                     }
                 }
                 initials
-            },
+            }
             Name => format!("{} {}", given_name(), surname()),
-            Prose => prose(),
+            Prose(n) => prose(*n),
             PhoneNr => phone_nr(),
             OneOf(list) => element(list),
         }

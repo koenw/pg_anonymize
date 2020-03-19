@@ -41,10 +41,10 @@ pub(crate) fn surname() -> &'static str {
 }
 
 /// Generate a somewhat latin paragraph.
-pub(crate) fn prose() -> String {
+pub(crate) fn prose(length: usize) -> String {
     let mut rng = rand::thread_rng();
     let no_words = rng.gen_range(5, 50);
-    lipsum_words(no_words)
+    lipsum_words(no_words).chars().take(length).collect()
 }
 
 /// Generate a random (semi-) phone number.
